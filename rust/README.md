@@ -35,6 +35,47 @@ Or authenticate via OAuth:
 claw login
 ```
 
+### Environment File Setup
+
+For easier configuration, you can use a `.env` file:
+
+```bash
+# Copy the example file
+cp .env.example .env
+
+# Edit with your API keys
+nano .env  # or your preferred editor
+
+# Load the environment
+source load-env.sh
+```
+
+#### Supported Providers
+
+**Anthropic (default):**
+```bash
+ANTHROPIC_API_KEY=sk-ant-your-key-here
+ANTHROPIC_BASE_URL=https://api.anthropic.com  # optional
+```
+
+**Groq (OpenAI-compatible):**
+```bash
+OPENAI_API_KEY=your-groq-api-key-here
+OPENAI_BASE_URL=https://api.groq.com/openai/v1
+```
+
+**xAI/Grok:**
+```bash
+XAI_API_KEY=your-xai-api-key-here
+XAI_BASE_URL=https://api.x.ai/v1  # optional
+```
+
+**OpenAI:**
+```bash
+OPENAI_API_KEY=sk-your-openai-key-here
+OPENAI_BASE_URL=https://api.openai.com/v1  # optional
+```
+
 ## Mock parity harness
 
 The workspace now includes a deterministic Anthropic-compatible mock service and a clean-environment CLI harness for end-to-end parity checks.
